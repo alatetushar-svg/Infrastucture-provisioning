@@ -11,15 +11,5 @@ resource "azurerm_network_interface" "nic" {
     public_ip_address_id          = data.azurerm_public_ip.data_pip[each.key].id
   }
 }
-data "azurerm_subnet" "data_subnet" {
-        for_each = var.nics
-  name                 = each.value.subnet_name
-  virtual_network_name = each.value.vnet_name
-  resource_group_name  = each.value.resource_group_name
-}
-data "azurerm_public_ip" "data_pip" {
-    for_each = var.nics
-  name                = each.value.pip_name
-  resource_group_name = each.value.resource_group_name
-} 
+
 variable "nics" {}
