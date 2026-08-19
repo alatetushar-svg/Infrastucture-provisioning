@@ -1,14 +1,32 @@
 name: Dummy Workflow
 on:
   workflow_dispatch:
+
+
 jobs:
   build:
     runs-on: self-hosted
+
+
     steps:
       - uses: actions/checkout@v4
+
+
       - name: Run a one-line script
         run: echo "Hello, world!"
-      - name: Run a multi-line script
-        run: |
-          echo "Add other actions to build,"
-          echo "test, and deploy your project."
+
+
+      - name: azure login
+        run: az login --service-principal --username 6e64d3c9-c67f-4f10-b98b-369f50a2cfbf --password vra8Q~J0JmRSuZfPSMLM7W_I5ABrDwgI0-1xPcGs --tenant 4039544a-5fa0-4809-92a7-047ca14bcc69
+
+
+      - name: init
+        run: terraform init
+
+
+      - name: plan
+        run: terraform plan
+
+
+      - name: apply
+        run: terraform apply -auto-approve
