@@ -1,18 +1,14 @@
-name: InfraFormation
-
+name: Dummy Workflow
 on:
-  push:
-    branches: [ main ]   # triggers when you push to main branch
-
+  workflow_dispatch:
 jobs:
-  check-runner:
-    runs-on: self-hosted   # targets your MacBook runner
+  build:
+    runs-on: self-hosted
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Print runner info
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo "Hello, world!"
+      - name: Run a multi-line script
         run: |
-          echo "✅ Runner is online and working!"
-          echo "Runner name: $RUNNER_NAME"
-          echo "OS: $RUNNER_OS"
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
