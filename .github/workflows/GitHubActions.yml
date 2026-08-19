@@ -1,0 +1,18 @@
+name: InfraFormation
+
+on:
+  push:
+    branches: [ main ]   # triggers when you push to main branch
+
+jobs:
+  check-runner:
+    runs-on: self-hosted   # targets your MacBook runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print runner info
+        run: |
+          echo "✅ Runner is online and working!"
+          echo "Runner name: $RUNNER_NAME"
+          echo "OS: $RUNNER_OS"
