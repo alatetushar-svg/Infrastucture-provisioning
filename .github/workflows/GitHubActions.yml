@@ -17,7 +17,7 @@ jobs:
 
 
       - name: azure login
-        run: az login --service-principal --username 6e64d3c9-c67f-4f10-b98b-369f50a2cfbf --password vra8Q~J0JmRSuZfPSMLM7W_I5ABrDwgI0-1xPcGs --tenant 4039544a-5fa0-4809-92a7-047ca14bcc69
+        run: az login --service-principal --username 136e4513-6466-4756-9c03-21fbd9e7866d --password vra8Q~J0JmRSuZfPSMLM7W_I5ABrDwgI0-1xPcGs --tenant 4039544a-5fa0-4809-92a7-047ca14bcc69
 
 
       - name: init
